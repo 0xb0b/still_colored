@@ -6,17 +6,17 @@ if exists("syntax_on")
 endif
 
 
-let s:almost_black = '#1e1e1e'
+let s:almost_black = '#1a1a1a'
 let s:dark_gray = '#363330'
 let s:gray = '#968d84'
-let s:light_gray = '#c7c7c7'
+let s:lighter_gray = '#a3a3a3'
 let s:almost_white = '#f8f8f8'
 " let s:aqua = '#689d6a'
 let s:blue = '#83a598'
 let s:green = '#b5bd68'
 let s:amber = '#ffbf00'
 let s:yellow = '#ffc24b'
-let s:dark_yellow = '#3d2e12'
+" let s:dark_yellow = '#3d2e12'
 let s:red = '#ff3600'
 
 let s:none = 'NONE'
@@ -32,11 +32,11 @@ function! s:hl(group, fg, bg, fx)
 endfunction
 
 
-call s:hl('Normal', s:light_gray, s:almost_black, s:none)
-call s:hl('Comment', s:gray, s:none, s:none)
+call s:hl('Normal', s:gray, s:almost_black, s:none)
+call s:hl('Comment', s:gray, s:dark_gray, s:none)
 call s:hl('Constant', s:amber, s:none, s:none)
 call s:hl('String', s:green, s:none, s:none)
-call s:hl('Todo', s:almost_white, s:none, s:none)
+call s:hl('Todo', s:almost_white, s:dark_gray, s:none)
 call s:hl('Error', s:red, s:none, s:none)
 call s:hl('Macro', s:blue, s:none, s:none)
 call s:hl('Visual', s:none, s:none, s:inverse)
@@ -44,7 +44,7 @@ call s:hl('Visual', s:none, s:none, s:inverse)
 call s:hl('WarningMsg', s:yellow, s:none, s:none)
 hi! link ErrorMsg Error
 
-call s:hl('Search', s:amber, s:dark_yellow, s:none)
+call s:hl('Search', s:amber, s:dark_gray, s:none)
 call s:hl('IncSearch', s:amber, s:none, s:inverse)
 hi! link MatchParen Search
 
@@ -66,8 +66,8 @@ call s:hl('NonText', s:dark_gray, s:none, s:none)
 hi! link SpecialKey NonText
 
 call s:hl('VertSplit', s:none, s:none, s:none)
-call s:hl('StatusLine', s:almost_white, s:dark_gray, s:none)
-call s:hl('StatusLineNC', s:light_gray, s:dark_gray, s:none)
+call s:hl('StatusLine', s:lighter_gray, s:dark_gray, s:none)
+call s:hl('StatusLineNC', s:gray, s:dark_gray, s:none)
 
 " Popup menu: normal item
 call s:hl('Pmenu', s:none, s:dark_gray, s:none)
