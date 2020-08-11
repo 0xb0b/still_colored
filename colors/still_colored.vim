@@ -7,17 +7,17 @@ endif
 
 
 let s:almost_black = '#1a1a1a'
-let s:dark_gray = '#363330'
-let s:gray = '#968d84'
+let s:darker_gray = '#363330'
+let s:gray = '#78716b'
 let s:lighter_gray = '#a3a3a3'
 let s:almost_white = '#f8f8f8'
 " let s:aqua = '#689d6a'
 let s:blue = '#83a598'
-let s:green = '#b5bd68'
+let s:green = '#9fa65b'
 let s:amber = '#ffbf00'
 let s:yellow = '#ffc24b'
-" let s:dark_yellow = '#3d2e12'
-let s:red = '#ff3600'
+let s:screaming_red = '#ff3600'
+let s:red = '#cc421b'
 
 let s:none = 'NONE'
 let s:inverse = 'inverse'
@@ -32,24 +32,26 @@ function! s:hl(group, fg, bg, fx)
 endfunction
 
 
-call s:hl('Normal', s:gray, s:almost_black, s:none)
-call s:hl('Comment', s:gray, s:dark_gray, s:none)
-call s:hl('Constant', s:amber, s:none, s:none)
+call s:hl('Normal', s:lighter_gray, s:almost_black, s:none)
+call s:hl('Comment', s:gray, s:none, s:none)
+
+call s:hl('Constant', s:red, s:none, s:none)
 call s:hl('String', s:green, s:none, s:none)
-call s:hl('Todo', s:almost_white, s:dark_gray, s:none)
-call s:hl('Error', s:red, s:none, s:none)
+call s:hl('Todo', s:almost_white, s:none, s:none)
+call s:hl('Error', s:screaming_red, s:none, s:none)
 call s:hl('Macro', s:blue, s:none, s:none)
 call s:hl('Visual', s:none, s:none, s:inverse)
 
 call s:hl('WarningMsg', s:yellow, s:none, s:none)
 hi! link ErrorMsg Error
+hi! link NvimInternalError Error
 
-call s:hl('Search', s:amber, s:dark_gray, s:none)
+call s:hl('Search', s:amber, s:darker_gray, s:none)
 call s:hl('IncSearch', s:amber, s:none, s:inverse)
 hi! link MatchParen Search
 
 call s:hl('LineNr', s:gray, s:none, s:none)
-call s:hl('CursorLineNr', s:almost_white, s:dark_gray, s:none)
+call s:hl('CursorLineNr', s:almost_white, s:darker_gray, s:none)
 
 call s:hl('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
@@ -58,25 +60,31 @@ hi! link vCursor Cursor
 hi! link iCursor Cursor
 " Language mapping cursor
 hi! link lCursor Cursor
+call s:hl('CursorLine', s:none, s:none, s:none)
+hi! link CursorColumn CursorLine
 
-call s:hl('ColorColumn', s:none, s:amber, s:none)
+call s:hl('ColorColumn', s:none, s:darker_gray, s:none)
 
-
-call s:hl('NonText', s:dark_gray, s:none, s:none)
+call s:hl('NonText', s:darker_gray, s:none, s:none)
 hi! link SpecialKey NonText
 
 call s:hl('VertSplit', s:none, s:none, s:none)
-call s:hl('StatusLine', s:lighter_gray, s:dark_gray, s:none)
-call s:hl('StatusLineNC', s:gray, s:dark_gray, s:none)
+call s:hl('StatusLine', s:lighter_gray, s:darker_gray, s:none)
+call s:hl('StatusLineNC', s:gray, s:darker_gray, s:none)
 
 " Popup menu: normal item
-call s:hl('Pmenu', s:none, s:dark_gray, s:none)
+call s:hl('Pmenu', s:none, s:darker_gray, s:none)
 " Popup menu: selected item
-call s:hl('PmenuSel', s:yellow, s:none, s:none)
+call s:hl('PmenuSel', s:almost_white, s:none, s:none)
 " Popup menu: scrollbar
-call s:hl('PmenuSbar', s:none, s:dark_gray, s:none)
+call s:hl('PmenuSbar', s:none, s:darker_gray, s:none)
 " Popup menu: scrollbar thumb
 call s:hl('PmenuThumb', s:none, s:almost_black, s:none)
+
+hi! link Directory Macro
+
+" 'Press enter' prompt and yes/no questions
+hi! link Question Normal
 
 " Generic statement
 hi! link Statement Normal
