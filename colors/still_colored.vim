@@ -5,22 +5,37 @@ endif
 
 let s:is_dark = (&background == 'dark')
 
-let s:almost_black = '#1a1a1a'
-let s:darker_gray = '#363330'
+let s:almostblack = '#1a1a1a'
+let s:darkergray = '#363330'
 let s:gray = '#78716b'
-let s:lighter_gray = '#a3a3a3'
-let s:almost_white = '#f8f8f8'
-" let s:aqua = '#689d6a'
-let s:blue = '#283ebc'
-let s:faded_blue = '#83a598'
-let s:dark_green = '#7d8248'
+let s:lightergray = '#a3a3a3'
+let s:almostwhite = '#f8f8f8'
+let s:fadedblue = '#83a598'
 let s:green = '#9fa65b'
-let s:light_green = '#edfbed'
 let s:amber = '#ffbf00'
 let s:yellow = '#ffc24b'
-let s:screaming_red = '#ff3600'
-let s:darker_red = '#9e3011'
+let s:screaminred = '#ff3600'
 let s:red = '#cc421b'
+
+" emacs colors
+" http://www.raebear.net/computers/emacs-colors/
+" as seen on yt in Xah Lee videos
+" https://www.youtube.com/channel/UCXEJNKH9I4xsoyUNN3IL96A
+let s:honeydew = '#e4f2e4'
+let s:honeydew3 = '#c1cdc1'
+let s:redmarker = '#E7DACD'
+let s:yellowmarker = '#EFF789'
+let s:bluemarker = '#BCDEE9'
+let s:darkmarker = '#A4AEA4'
+let s:firebrick = '#b22222'
+let s:violetred = '#8b475d'
+" let s:purple = '#a020f0'
+" let s:darkslateblue = '#483d8b'
+let s:blue = '#0000ff'
+let s:forestgreen = '#228b22'
+" let s:seagreen = '#2e8b57'
+" let s:chartreuse = '#458b00'
+" let s:darkcyan = '#008b8b'
 
 let s:none = 'NONE'
 let s:inverse = 'inverse'
@@ -36,51 +51,79 @@ endfunction
 
 
 if s:is_dark
-  call s:hl('Normal', s:lighter_gray, s:almost_black, s:none)
+  call s:hl('Normal', s:lightergray, s:almostblack, s:none)
+  call s:hl('Comment', s:gray, s:none, s:none)
   call s:hl('String', s:green, s:none, s:none)
   call s:hl('Constant', s:red, s:none, s:none)
-  call s:hl('Todo', s:almost_white, s:none, s:none)
+  call s:hl('Todo', s:almostwhite, s:none, s:none)
+  call s:hl('Macro', s:fadedblue, s:none, s:none)
 
-  call s:hl('NonText', s:darker_gray, s:none, s:none)
-else
-  call s:hl('Normal', s:almost_black, s:light_green, s:none)
-  call s:hl('String', s:blue, s:none, s:none)
-  call s:hl('Constant', s:darker_red, s:none, s:none)
-  call s:hl('Todo', s:yellow, s:lighter_gray, s:none)
-
-  call s:hl('NonText', s:lighter_gray, s:none, s:none)
-endif
-  call s:hl('Comment', s:gray, s:none, s:none)
-  call s:hl('Error', s:screaming_red, s:none, s:none)
-  call s:hl('Macro', s:faded_blue, s:none, s:none)
-  call s:hl('Visual', s:none, s:none, s:inverse)
-
-  call s:hl('Search', s:amber, s:darker_gray, s:none)
+  call s:hl('Search', s:amber, s:darkergray, s:none)
   call s:hl('IncSearch', s:amber, s:none, s:inverse)
 
+  call s:hl('Visual', s:none, s:none, s:inverse)
+
+  call s:hl('Error', s:screaminred, s:none, s:none)
   call s:hl('WarningMsg', s:yellow, s:none, s:none)
 
-  call s:hl('LineNr', s:gray, s:none, s:none)
-  call s:hl('CursorLineNr', s:almost_white, s:darker_gray, s:none)
+  call s:hl('NonText', s:darkergray, s:none, s:none)
 
-  call s:hl('Cursor', s:none, s:none, s:inverse)
-  call s:hl('CursorLine', s:none, s:none, s:none)
+  call s:hl('CursorLineNr', s:almostwhite, s:darkergray, s:none)
 
-  call s:hl('ColorColumn', s:none, s:darker_gray, s:none)
+  call s:hl('StatusLine', s:lightergray, s:darkergray, s:none)
+  call s:hl('StatusLineNC', s:gray, s:darkergray, s:none)
 
-
-  call s:hl('VertSplit', s:none, s:none, s:none)
-  call s:hl('StatusLine', s:lighter_gray, s:darker_gray, s:none)
-  call s:hl('StatusLineNC', s:gray, s:darker_gray, s:none)
+  call s:hl('ColorColumn', s:none, s:darkergray, s:none)
 
   " Popup menu: normal item
-  call s:hl('Pmenu', s:none, s:darker_gray, s:none)
+  call s:hl('Pmenu', s:none, s:darkergray, s:none)
   " Popup menu: selected item
-  call s:hl('PmenuSel', s:almost_white, s:none, s:none)
+  call s:hl('PmenuSel', s:almostwhite, s:none, s:none)
   " Popup menu: scrollbar
-  call s:hl('PmenuSbar', s:none, s:darker_gray, s:none)
+  call s:hl('PmenuSbar', s:none, s:darkergray, s:none)
   " Popup menu: scrollbar thumb
-  call s:hl('PmenuThumb', s:none, s:almost_black, s:none)
+  call s:hl('PmenuThumb', s:none, s:almostblack, s:none)
+else
+  call s:hl('Normal', s:almostblack, s:honeydew, s:none)
+  call s:hl('Comment', s:gray, s:none, s:none)
+  call s:hl('String', s:forestgreen, s:none, s:none)
+  call s:hl('Constant', s:firebrick, s:none, s:none)
+  call s:hl('Todo', s:gray, s:yellowmarker, s:none)
+  call s:hl('Macro', s:blue, s:none, s:none)
+
+  call s:hl('Search', s:almostblack, s:redmarker, s:none)
+  call s:hl('IncSearch', s:honeydew, s:almostblack, s:none)
+
+  call s:hl('Visual', s:none, s:bluemarker, s:none)
+
+  call s:hl('NonText', s:violetred, s:none, s:none)
+
+  call s:hl('Error', s:screaminred, s:darkergray, s:none)
+  call s:hl('WarningMsg', s:yellow, s:darkergray, s:none)
+
+  call s:hl('CursorLineNr', s:almostblack, s:honeydew3, s:none)
+
+  call s:hl('StatusLine', s:almostblack, s:honeydew3, s:none)
+  call s:hl('StatusLineNC', s:gray, s:honeydew3, s:none)
+
+  call s:hl('ColorColumn', s:none, s:honeydew3, s:none)
+
+  " Popup menu: normal item
+  call s:hl('Pmenu', s:none, s:honeydew3, s:none)
+  " Popup menu: selected item
+  call s:hl('PmenuSel', s:none, s:yellowmarker, s:none)
+  " Popup menu: scrollbar
+  call s:hl('PmenuSbar', s:none, s:honeydew3, s:none)
+  " Popup menu: scrollbar thumb
+  call s:hl('PmenuThumb', s:none, s:darkmarker, s:none)
+endif
+
+call s:hl('LineNr', s:gray, s:none, s:none)
+
+call s:hl('Cursor', s:none, s:none, s:inverse)
+call s:hl('CursorLine', s:none, s:none, s:none)
+
+call s:hl('VertSplit', s:none, s:none, s:none)
 
 
 " Generic statement
