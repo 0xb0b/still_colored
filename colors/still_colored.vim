@@ -29,8 +29,8 @@ let s:bluemarker = '#BCDEE9'
 let s:darkmarker = '#A4AEA4'
 let s:firebrick = '#b22222'
 let s:violetred = '#8b475d'
-" let s:purple = '#a020f0'
-" let s:darkslateblue = '#483d8b'
+let s:purple = '#a020f0'
+let s:darkslateblue = '#483d8b'
 let s:blue = '#0000ff'
 let s:forestgreen = '#228b22'
 " let s:seagreen = '#2e8b57'
@@ -98,8 +98,8 @@ else
 
   call s:hl('NonText', s:violetred, s:none, s:none)
 
-  call s:hl('Error', s:screaminred, s:darkergray, s:none)
-  call s:hl('WarningMsg', s:yellow, s:darkergray, s:none)
+  call s:hl('Error', s:screaminred, s:none, s:none)
+  call s:hl('WarningMsg', s:none, s:yellowmarker, s:none)
 
   call s:hl('CursorLineNr', s:almostblack, s:honeydew3, s:none)
 
@@ -111,11 +111,15 @@ else
   " Popup menu: normal item
   call s:hl('Pmenu', s:none, s:honeydew3, s:none)
   " Popup menu: selected item
-  call s:hl('PmenuSel', s:none, s:yellowmarker, s:none)
+  " call s:hl('PmenuSel', s:none, s:amber, s:none)
+  hi! link PmenuSel WarningMsg
   " Popup menu: scrollbar
   call s:hl('PmenuSbar', s:none, s:honeydew3, s:none)
   " Popup menu: scrollbar thumb
   call s:hl('PmenuThumb', s:none, s:darkmarker, s:none)
+
+  " Titles for output from :set all, :autocmd, etc.
+  call s:hl('Title', s:purple, s:none, s:none)
 endif
 
 call s:hl('LineNr', s:gray, s:none, s:none)
