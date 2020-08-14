@@ -31,12 +31,12 @@ let s:darkmarker = '#a4aea4'
 let s:firebrick = '#b22222'
 let s:violetred = '#8b475d'
 let s:purple = '#a020f0'
-let s:darkslateblue = '#483d8b'
 let s:blue = '#0000ff'
 let s:forestgreen = '#228b22'
+let s:darkcyan = '#008b8b'
+" let s:darkslateblue = '#483d8b'
 " let s:seagreen = '#2e8b57'
 " let s:chartreuse = '#458b00'
-" let s:darkcyan = '#008b8b'
 
 let s:none = 'NONE'
 let s:inverse = 'inverse'
@@ -90,7 +90,7 @@ else
   call s:hl('String', s:forestgreen, s:none, s:none)
   call s:hl('Constant', s:firebrick, s:none, s:none)
   call s:hl('Todo', s:gray, s:yellowmarker, s:none)
-  call s:hl('Macro', s:blue, s:none, s:none)
+  call s:hl('Macro', s:darkcyan, s:none, s:none)
 
   call s:hl('Search', s:none, s:redmarker, s:none)
   call s:hl('IncSearch', s:honeydew, s:almostblack, s:none)
