@@ -21,12 +21,13 @@ let s:red = '#cc421b'
 " http://www.raebear.net/computers/emacs-colors/
 " as seen on yt in Xah Lee videos
 " https://www.youtube.com/channel/UCXEJNKH9I4xsoyUNN3IL96A
-let s:honeydew = '#e4f2e4'
+let s:honeydew = '#f0fbed'
 let s:honeydew3 = '#c1cdc1'
-let s:redmarker = '#E7DACD'
+let s:redmarker = '#E9C2B6'
+let s:redmarker2 = '#EF9189'
 let s:yellowmarker = '#EFF789'
-let s:bluemarker = '#BCDEE9'
-let s:darkmarker = '#A4AEA4'
+let s:bluemarker = '#ACDCF4'
+let s:darkmarker = '#a4aea4'
 let s:firebrick = '#b22222'
 let s:violetred = '#8b475d'
 let s:purple = '#a020f0'
@@ -91,19 +92,19 @@ else
   call s:hl('Todo', s:gray, s:yellowmarker, s:none)
   call s:hl('Macro', s:blue, s:none, s:none)
 
-  call s:hl('Search', s:almostblack, s:redmarker, s:none)
+  call s:hl('Search', s:none, s:redmarker, s:none)
   call s:hl('IncSearch', s:honeydew, s:almostblack, s:none)
 
   call s:hl('Visual', s:none, s:bluemarker, s:none)
 
   call s:hl('NonText', s:violetred, s:none, s:none)
 
-  call s:hl('Error', s:screaminred, s:none, s:none)
+  call s:hl('Error', s:none, s:redmarker2, s:none)
   call s:hl('WarningMsg', s:none, s:yellowmarker, s:none)
 
-  call s:hl('CursorLineNr', s:almostblack, s:honeydew3, s:none)
+  hi! link CursorLineNr Normal
 
-  call s:hl('StatusLine', s:almostblack, s:honeydew3, s:none)
+  call s:hl('StatusLine', s:none, s:honeydew3, s:none)
   call s:hl('StatusLineNC', s:gray, s:honeydew3, s:none)
 
   call s:hl('ColorColumn', s:none, s:honeydew3, s:none)
